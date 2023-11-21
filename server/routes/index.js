@@ -22,6 +22,20 @@ router.get('/about', function(req, res, next) {
   });
 });
 
+/* GET products page. */
+router.get('/products', function(req, res, next) {
+  res.render('index', { 
+    title: 'Products'  
+  });
+});
+
+/* GET services page. */
+router.get('/services', function(req, res, next) {
+  res.render('index', { 
+    title: 'Services'  
+  });
+});
+
 /* GET contacts page. */
 router.get('/contact', function(req, res, next) {
   res.render('index', { 
