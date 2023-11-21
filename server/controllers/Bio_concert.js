@@ -47,7 +47,7 @@ module.exports.ProcessConcert = async (req,res,next)=>{
             "Start_Time": req.body.Start_Time
         });
         Concert.create(newConcert).then(() =>{
-            res.redirect('/concertslist')
+            res.redirect('/concertlist')
         })
     }
     catch(error){
@@ -91,7 +91,7 @@ module.exports.ProcessEditConcert = (req,res,next)=>{
             "Start_Time": req.body.Start_Time
         });
         Concert.findByIdAndUpdate(id,updatedConcert).then(()=>{
-            res.redirect('/concertslist')
+            res.redirect('/concertlist')
         });
     }
     catch(error){
@@ -108,7 +108,7 @@ module.exports.DeleteConcert = (req,res,next)=>{
         let id = req.params.id;
         Concert.deleteOne({_id:id}).then(() =>
         {
-            res.redirect('/concertslist')
+            res.redirect('/concertlist')
         })
     }
     catch(error){
