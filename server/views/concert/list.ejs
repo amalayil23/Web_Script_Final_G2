@@ -28,14 +28,14 @@
                 <td class="text-center col-1"><%= ConcertList[count].Start_Time %></td>
                 <td class="text-center col-1">
                     <a href="/concertlist/edit/<%= ConcertList[count]._id %>" 
-                        class="btn btn-primary btn-sm">
-                        <i class="fas fa-pencil-alt"></i> Edit
+                        class="btn btn-success btn-sm">
+                        <i class="fa-solid fa-pen fa-lg"></i> Update
                     </a>
                 </td>
                 <td class="text-center col-1">
                     <a href="/concertlist/delete/<%= ConcertList[count]._id %>" onclick="return confirm('Are you sure you want to delete this concert entry?')"
                         class="btn btn-danger btn-sm">
-                        <i class="fas trash-alt"></i> Delete
+                        <i class="fa-solid fa-trash fa-lg"></i> Remove
                     </a>
                 </td>
             </tr>
