@@ -2,7 +2,7 @@
 <% include ../partials/main_nav.ejs %>
 <main class="container">
     <div class="row">
-        <div class="offset-md-1 col-md-12">
+        <div class="offset-md-1 col-md-10">
             <h1><% title %> </h1>  
             <a href="/concertlist/add" class="btn btn-primary" 
             role="button"><i class="fas fa-plus-circle"></i> Add Event</a>      
@@ -10,22 +10,23 @@
         <br>
         <table class="table table-bordered table-striped table-hover">
             <tr class="d-flex">
-                <th class="text-center col-2">Artist(s)</th>
+                <th class="text-center col-3">Artist(s)</th>
                 <th class="text-center col-2">Genre(s)</th>
                 <th class="text-center col-2">Venue</th>
                 <th class="text-center col-1">Date</th>
-                <th class="text-center col-2">Ticket Price(s)</th>
+                <th class="text-center col-1">Ticket Price(s)</th>
                 <th class="text-center col-1">Start Time</th>
+                <th class="text-center col-2">Options</th>
             </tr>
             <% for(let count=0;count<ConcertList.length;count++) { %>    
             <tr class="d-flex">
-                <td class="text-center col-2"><%= ConcertList[count].Artist %></td>
+                <td class="text-center col-3"><%= ConcertList[count].Artist %></td>
                 <td class="text-center col-2"><%= ConcertList[count].Genre %></td>
                 <td class="text-center col-2"><%= ConcertList[count].Venue %></td>
                 <td class="text-center col-1"><%= ConcertList[count].Date %></td>
-                <td class="text-center col-2"><%= ConcertList[count].Ticket_Price %></td>
+                <td class="text-center col-1"><%= ConcertList[count].Ticket_Price %></td>
                 <td class="text-center col-1"><%= ConcertList[count].Start_Time %></td>
-                <td class="text-center col-2">
+                <td class="text-center col-1">
                     <a href="/concertlist/edit/<%= ConcertList[count]._id %>" 
                         class="btn btn-primary btn-sm">
                         <i class="fas fa-pencil-alt"></i> Edit
