@@ -45,7 +45,7 @@ router.get('/demos', function(req, res, next) {
 
 /* GET contacts page. */
 router.get('/contact', function(req, res, next) {
-  res.render('index', { 
+  res.render('contacts', { 
     title: 'Contact Us'  
   });
 });
