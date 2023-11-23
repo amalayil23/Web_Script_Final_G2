@@ -8,5 +8,12 @@
     justify-content: center;
     align-items: center;
     height: 30vh;
-  }
-  
+}
+
+.homeScreen h1 {
+    display: flex;
+    font-size: 90px;
+    justify-content: center;
+    margin-top: 250px;
+}
+
