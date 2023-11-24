@@ -8,23 +8,90 @@
     justify-content: center;
     align-items: center;
     height: 30vh;
+  }
+  
+
+  body {
+    background-image: url('/Asset/images/img1.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat-y;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100vh; /* Set the height of the body to the full viewport height */
+  }
+  
+  .jumbotron {
+    text-align: center;
+    padding: 100px;
+    
+  }
+  
+  .logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .jumbotron h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+  }
+  
+  main {
+    padding: 20px;
+  }
+
+/* Add the following styles to your existing CSS */
+
+/* Style the whole footer navbar */
+.navbar.footer {
+  background-color: #000; /* Set the background color to black */
 }
 
-.homeScreen h1{
-    display: flex;
-    font-size: 90px;
-    justify-content: center;
-    margin-top: 250px;
-    animation: waviy 1s infinite;
-    animation-delay: calc(.1s * var(--i));
+/* Style the links in the footer navbar */
+.navbar-nav .nav-link {
+  color: #fff !important; /* Set the text color to white */
+  font-family: 'Consolas', monospace; /* Set the font to Consolas */
 }
 
-@keyframes waviy {
-    0%, 40%, 100% {
-        transform: translateY(0);
-    }
-    20% {
-        transform: translateY(-20px);
-    }
+/* Style the dropdown items */
+.dropdown-menu {
+  background-color: #000; /* Set the background color to black for dropdown menus */
 }
 
+.dropdown-item {
+  color: #fff !important; /* Set the text color to white for dropdown items */
+}
+
+/* Adjust the padding for the whole footer navbar */
+.navbar.footer .container {
+  padding: 10px 15px; /* Adjust as needed for spacing */
+}
+.navbar-brand {
+  font-family: 'Consolas', monospace;
+}
+/* Add the following style to your existing CSS */
+
+/* Style the copyright text with Consolas font */
+.navbar-text {
+  font-family: 'Consolas', monospace;
+  color: #fff; /* Set the text color to white */
+}
+/* Increase the height of the footer */
+.navbar.footer {
+  min-height: 250px; /* Adjust the height as needed */
+}
+
+/* Increase the line height for the text in the navbar */
+.navbar-nav .nav-link,
+.dropdown-item {
+  line-height: 2; /* Adjust the line height as needed */
+}
+
+/* Increase the padding for the dropdown menu */
+.dropdown-menu {
+  padding: 10px; /* Adjust the padding as needed */
+}
+.dropdown-item {
+  color: #000 !important; /* Set the text color to black */
+}
