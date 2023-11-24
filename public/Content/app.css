@@ -95,3 +95,22 @@
 .dropdown-item {
   color: #000 !important; /* Set the text color to black */
 }
+
+.homeScreen h1{
+  color: white;
+  display: flex;
+  font-size: 90px;
+  justify-content: center;
+  margin-top: 150px;
+  animation: waviy 1s infinite;
+  animation-delay: calc(.1s * var(--i));
+}
+
+@keyframes waviy {
+  0%, 40%, 100% {
+      transform: translateY(0);
+  }
+  20% {
+      transform: translateY(-20px);
+  }
+}
