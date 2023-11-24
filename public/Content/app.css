@@ -48,10 +48,10 @@
   background-color: #000; /* Set the background color to black */
 }
 
-/* Style the links in the footer navbar */
+ /*Style the links in the footer navbar*/
 .navbar-nav .nav-link {
-  color: #fff !important; /* Set the text color to white */
-  font-family: 'Consolas', monospace; /* Set the font to Consolas */
+  /*color: #fff !important; Set the text color to white */
+  font-family: 'Consolas', monospace; /*Set the font to Consolas*/
 }
 
 /* Style the dropdown items */
