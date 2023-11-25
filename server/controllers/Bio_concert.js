@@ -3,6 +3,8 @@ var router = express.Router();
 //const { router } = require('../config/app');
 let Concert = require('../models/Bio_concert');
 
+// READ FUNCTION////////////////////////////////////////////////////////////
+
 module.exports.DislayConcertlist = async (req,res,next)=>{ //< Mark function as async
     try{
        const ConcertList = await Concert.find(); //< Use of await keyword
@@ -18,6 +20,8 @@ module.exports.DislayConcertlist = async (req,res,next)=>{ //< Mark function as 
        });
     }
  };
+
+ /// ADD FUNCTION/////////////////////////////////////////////////////
 
  module.exports.AddConcert = async (req,res,next)=>{
     try{
@@ -58,6 +62,8 @@ module.exports.ProcessConcert = async (req,res,next)=>{
         });
     }
 };
+
+//// UPDATE FUNCTION////////////////////////////////////////////////////////
 
 module.exports.EditConcert = async (req,res,next)=>{
     try{
@@ -102,6 +108,8 @@ module.exports.ProcessEditConcert = (req,res,next)=>{
         });
     }
 }
+
+///////////////DELETE FUNCTION//////////////////////////////////////////////////////////////////////////
 
 module.exports.DeleteConcert = (req,res,next)=>{
     try{

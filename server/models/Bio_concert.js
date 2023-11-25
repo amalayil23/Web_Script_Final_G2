@@ -12,4 +12,6 @@ let concertModel = mongoose.Schema({
 {
     collection:"concerts"
 });
+
+//EXPORTING THE MODEL TO MAKE  IT AVAILABLE TO OTHER PARTS
 module.exports = mongoose.model('Concert',concertModel);
