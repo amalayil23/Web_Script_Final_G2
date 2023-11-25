@@ -28,3 +28,65 @@
     }
 }
 
+
+.image-container {
+    margin-top: 20px;
+  }
+  
+  .image-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .image-item {
+    position: relative;
+    overflow: hidden;
+    max-width: 300px; /* Adjust the maximum width as needed */
+    margin-bottom: 20px; /* Spacing between items */
+  }
+  
+  .image-description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .image-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .image-item:hover .image-description {
+    opacity: 1;
+  }
+/*Button Css*/
+.button-container {
+    text-align: center;
+    margin-top: 20px; /* Adjust the margin-top value as needed */
+  }
+  
+  .more-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .more-button:hover {
+    background-color: #0056b3;
+  }
