@@ -36,12 +36,6 @@ router.get('/services', function(req, res, next) {
   });
 });
 
-/* GET demos page. */
-router.get('/demos', function(req, res, next) {
-  res.render('index', { 
-    title: 'Demo'  
-  });
-});
 
 /* GET contacts page. */
 router.get('/contact', function(req, res, next) {
