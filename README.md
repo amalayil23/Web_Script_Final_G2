@@ -14,3 +14,5 @@ The package.json file has listed all the dependencies used on this project.
 
 # Citations
 CodexWorld. "How to Show Delete Confirmation Message Using JavaScript." CodexWorld, https://www.codexworld.com/how-to/show-delete-confirmation-message-dialog-javascript/
+
+"15 Gorgeous CSS Text Animation Effects [Examples] - Alvaro Trigo's Blog." Alvaro Trigo\'s Bolg, 30 Oct. 2023, https://alvarotrigo.com/blog/css-text-animations/
