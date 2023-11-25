@@ -35,6 +35,7 @@
   .jumbotron h1 {
     font-size: 4rem;
     margin-bottom: 20px;
+
   }
   
   main {
@@ -131,7 +132,7 @@
 .image-item {
   position: relative;
   overflow: hidden;
-  max-width: 300px; /* Adjust the maximum width as needed */
+  max-width: 300px; 
   margin-bottom: 20px; /* Spacing between items */
 }
 
