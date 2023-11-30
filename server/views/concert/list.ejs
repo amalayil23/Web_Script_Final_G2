@@ -6,12 +6,15 @@
     <div class="row">
         <div class="offset-md-1 col-md-10">
             <h1 style = "color:white ; text-align:center"><%= title %> </h1>  
+            <% if(typeof displayName=='string' && displayName) { %>
             <a href="/concertlist/add" class="btn btn-primary" 
             role="button"><i class="fas fa-plus-circle"></i> Add Event</a>      
         <br>
+        <% } %>
         <br>
         <table class="table table-bordered table-striped table-hover">
             <tr class="d-flex">
+            <% if(typeof displayName=='string' && displayName) { %>
                 <th class="text-center col-3">Artist(s)</th>
                 <th class="text-center col-2">Genre(s)</th>
                 <th class="text-center col-2">Venue</th>
@@ -19,9 +22,19 @@
                 <th class="text-center col-1">Ticket Price(s)</th>
                 <th class="text-center col-1">Start Time</th>
                 <th class="text-center col-2">Options</th>
+
+            <% } else { %>
+                <th class="text-center col-3">Artist(s)</th>
+                <th class="text-center col-2">Genre(s)</th>
+                <th class="text-center col-2">Venue</th>
+                <th class="text-center col-2    ">Date</th>
+                <th class="text-center col-2">Ticket Price(s)</th>
+                <th class="text-center col-2">Start Time</th>
+            <% } %>
             </tr>
             <% for(let count=0;count<ConcertList.length;count++) { %>    
             <tr class="d-flex">
+            <% if(typeof displayName=='string' && displayName) { %>
                 <td class="text-center col-3"><%= ConcertList[count].Artist %></td>
                 <td class="text-center col-2"><%= ConcertList[count].Genre %></td>
                 <td class="text-center col-2"><%= ConcertList[count].Venue %></td>
@@ -40,8 +53,16 @@
                         <i class="fa-solid fa-trash fa-lg"></i> Remove
                     </a>
                 </td>
-            </tr>
+            <% } else { %>
+            <td class="text-center col-3"><%= ConcertList[count].Artist %></td>
+                <td class="text-center col-2"><%= ConcertList[count].Genre %></td>
+                <td class="text-center col-2"><%= ConcertList[count].Venue %></td>
+                <td class="text-center col-2"><%= ConcertList[count].Date %></td>
+                <td class="text-center col-2"><%= ConcertList[count].Ticket_Price %></td>
+                <td class="text-center col-2"><%= ConcertList[count].Start_Time %></td>
             <% } %>
+            </tr>
+        <% } %>
         </table>
     </div>
     </div>

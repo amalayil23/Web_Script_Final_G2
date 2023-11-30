@@ -10,7 +10,9 @@ module.exports.DislayConcertlist = async (req,res,next)=>{ //< Mark function as 
        const ConcertList = await Concert.find(); //< Use of await keyword
        res.render('concert/list', {
           title: 'Concert List', 
-          ConcertList: ConcertList
+          ConcertList: ConcertList,
+          displayName: req.user ? req.user.displayName:''
+          
        });
     }catch(err){
        console.error(err);
@@ -27,7 +29,8 @@ module.exports.DislayConcertlist = async (req,res,next)=>{ //< Mark function as 
     try{
         res.render('concert/add',
         {
-            title:'Add Concert'
+            title:'Add Concert',
+            displayName: req.user ? req.user.displayName:''
         })
     }
     catch(err)
@@ -48,7 +51,7 @@ module.exports.ProcessConcert = async (req,res,next)=>{
             "Venue": req.body.Venue,
             "Date": req.body.Date,
             "Ticket_Price": req.body.Ticket_Price,
-            "Start_Time": req.body.Start_Time
+            "Start_Time": req.body.Start_Time,
         });
         Concert.create(newConcert).then(() =>{
             res.redirect('/concertlist')
@@ -72,7 +75,8 @@ module.exports.EditConcert = async (req,res,next)=>{
     res.render('concert/edit',
     {
         title:'Edit Concert',
-        Concert:concertToEdit
+        Concert:concertToEdit,
+        displayName: req.user ? req.user.displayName:''
     })
 }
 catch(error){

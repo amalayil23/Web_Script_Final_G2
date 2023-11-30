@@ -5,8 +5,12 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
-var router = express.Router();
-
+let router = express.Router();
+let session = require('express-session');
+let passport = require('passport');
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy;
+let flash = require('connect-flash');
 let app = express();
 
 // view engine setup
@@ -20,14 +24,44 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
+
+
 //Config MongoDB//
 let mongoose = require('mongoose');
 let mongoDB = mongoose.connection;
 let DB = require('./db');
+
+//Create a user model instance
+let userModel = require('../models/user');
+let User = userModel.User;
+
 //point mongoose to the DB
 mongoose.connect(DB.URI);
 mongoDB.on('error',console.error.bind(console,'Connection Error'));
 mongoDB.once('open',()=>{console.log("Mongo DB is connected")});
+
+
+//set up express session
+app.use(session({
+  secret: "SomeSecret",
+  saveUninitialized:false, 
+   resave:false
+ }));
+ 
+ //initialize flash
+ app.use(flash());
+ 
+ //initialize the passport
+ app.use(passport.initialize());
+ app.use(passport.session());
+ 
+ //implement a User Authentication
+ passport.use(User.createStrategy());
+ //serialization and deserialization of the user
+ passport.serializeUser(User.serializeUser());
+ passport.deserializeUser(User.deserializeUser());
+ 
+
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
