@@ -115,6 +115,7 @@ router.get('/register',function(req,res,next){
   }
 })
 
+//POST Register Page
 router.post('/register', function(req,res,next){  
   let newUser = new User({
     username: req.body.username,
@@ -158,7 +159,7 @@ router.get('/success', function(req, res, next) {
 });
 
 
-
+/* GET LOGOUT vpage. */
 router.get('/logout',function(req,res,next){
   req.logout(function(err){
     if(err)
