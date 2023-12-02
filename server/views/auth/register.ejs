@@ -2,9 +2,9 @@
 <%- include ../partials/main_nav.ejs %>
 <main class="container">
     <!--Message Area-->
-    <% if (message.lenth > 0) { %>
+    <% if (message.length > 0) { %>
     <div class="alert alter-danger">
-        <%= message %>
+        <%=message%>
     </div>
     <% } %>
 
@@ -42,7 +42,7 @@
                 </fieldset>
                 <br>
                 <fieldset class="form-group text-right">
-                    <input type="submit" class="btn btn-success" onclick="return alert('Succesfully registered')"
+                    <input type="submit" class="btn btn-success" 
                     value="Register">
                     <a href="/">
                         <input type="button" class="btn btn-warning" value="Cancel">

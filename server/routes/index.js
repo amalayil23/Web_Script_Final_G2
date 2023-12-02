@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
-
+var req = require('connect-flash');
 const passport = require('passport');
 let userModel = require('../models/user');
+
+
 let User = userModel.User;
+
 /* GET home page. */
 router.get('/home', function(req, res, next) {
   res.render('index', { 
@@ -40,12 +43,15 @@ router.get('/services', function(req, res, next) {
 });
 
 
+
 /* GET contacts page. */
 router.get('/contact', function(req, res, next) {
   res.render('index', { 
     title: 'Contact Us' , displayName: req.user ? req.user.displayName:'' 
   });
 });
+
+
 
 // GET login page
 router.get('/login',function(req,res,next){
@@ -74,8 +80,14 @@ router.post('/login',function(req,res,next){
       if(!User)
       {
         req.flash('loginMessage',
-        'AuthenticationError');
-        return res.redirect('/login')
+        'Authentication Error: Please check your username and password  ');
+        //return res.redirect('/login')
+          return res.render('auth/login',
+          { 
+            title:'Login',
+            message: req.flash('loginMessage'),
+            displayName: req.user ? req.user.displayName:''
+          })
       }
       req.login(User,(err)=>{
         if(err)
@@ -103,7 +115,7 @@ router.get('/register',function(req,res,next){
   }
 })
 
-router.post('/register', function(req,res,next){
+router.post('/register', function(req,res,next){  
   let newUser = new User({
     username: req.body.username,
     // password: req.body.password,
@@ -114,10 +126,11 @@ router.post('/register', function(req,res,next){
     if(err)
     {
       console.log("Error in inserting new User");
-      if(err.name =='UserExistError')
+      console.log(err.name)
+      if(err.name =='UserExistsError')
       {
         req.flash('registerMessage',
-        'Registration Error : User already Exist'
+        'Registration Error : Username already in use'
       )}
       return res.render('auth/register',
       {
@@ -125,14 +138,26 @@ router.post('/register', function(req,res,next){
         message: req.flash('registerMessage'),
         displayName: req.user ? req.user.displayName:''
       })
-    }
-    else{
-      return passport.authenticate('local')(req,res,()=>{
-        res.redirect('/concertlist');
-      })
-    }
+      }
+    else
+    {
+      req.flash('sucessMessage',
+        'Registration Success : Please login'
+    )}
+    res.redirect('/success')
+    } )
+
   })
-})
+
+
+/* GET success page. */
+router.get('/success', function(req, res, next) {
+  res.render('auth/success', { 
+    title: 'Success', displayName: req.user ? req.user.displayName:'', message: req.flash('sucessMessage'),
+  });
+});
+
+
 
 router.get('/logout',function(req,res,next){
   req.logout(function(err){
