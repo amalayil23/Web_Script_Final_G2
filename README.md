@@ -6,7 +6,7 @@ The project idea we chose is Music Finer Website, this website allows users to p
 
 The database we use is on MongoDB, and we allow users to Create, Read, Update and Delete from our list.
 
-User authentication is not enabled at this stage, but will be added on the upcoming part of the project. 
+User authentication is enabled using passport.  
 
 The project repository has 3 main folders; node_modules folder with all the modules installed on the projects, Server folder with files accessible only on the server end and Public folder with files accessible to the front end. 
 

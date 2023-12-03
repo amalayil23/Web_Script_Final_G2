@@ -189,3 +189,44 @@
   color: white;
 }
 
+#box-aboutus
+{
+  
+  color:black;
+  width: 1000px;
+  height: 1000px;
+  align-items: center !important;
+  background: white;
+  text-align: center;
+}
+
+.alert
+{
+  color: red !important;
+  text-align: center !important ;
+  font-weight: bold;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  margin: 20px;
+}
+
+.image-item {
+  text-align: center;
+  margin-bottom: 20px; /* Adjust the margin as needed */
+}
+
+.image {
+  width: 180px !important; /* Adjust the width as needed */
+  height: 180px !important;
+  height: auto;
+}
+
+.image-description {
+  text-align: center;
+  margin-top: 10px;
+  color:white !important;
+}

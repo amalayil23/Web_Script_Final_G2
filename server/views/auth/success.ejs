@@ -1,0 +1,14 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<main class="container">
+    <!--Message Area-->
+    <% if (message.length > 0) { %>
+    <div style= " font-weight:bold ; font-size:20px" class="alert alter-danger">
+        <%= message %>
+    </div>
+    <% } %>
+
+    <a style="color:white; text-align:center"href="/login" class="nav-link"> <i class="fa-solid fa-2xl fa-sign-in-alt"></i> Login</a></li>
+
+<%- include ../partials/bottom_nav.ejs %>
