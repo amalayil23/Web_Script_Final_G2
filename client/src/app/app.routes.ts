@@ -5,6 +5,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { ContactsComponent } from './pages/contacts/contacts.component';
+import { ListComponent } from './concert/list/list.component';
+
 
 
 export const routes: Routes = [
@@ -13,5 +15,6 @@ export const routes: Routes = [
     {path:'product', component: ProductsComponent},
     {path:'services', component: ServicesComponent},
     {path:'contacts', component: ContactsComponent},
+    {path:'concerts', component: ListComponent},
     {path:'',redirectTo:'/home',pathMatch:'full'}
 ];
